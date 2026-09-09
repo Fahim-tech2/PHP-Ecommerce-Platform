@@ -1,0 +1,226 @@
+##############################################################
+#  .gitignore — Native PHP + MySQL E-Commerce Project
+#  Generated for: d:\web  (XAMPP / PHP 8.x / MySQL)
+##############################################################
+
+
+# ─────────────────────────────────────────────
+#  1. DATABASE CREDENTIALS & CONFIG
+# ─────────────────────────────────────────────
+
+# Environment / secrets file (create this locally, never commit)
+.env
+.env.*
+!.env.example
+
+# Any PHP config file that holds DB passwords
+includes/config.php
+includes/config.local.php
+config.php
+config.local.php
+db_config.php
+
+
+# ─────────────────────────────────────────────
+#  2. DATABASE FILES
+# ─────────────────────────────────────────────
+
+# SQLite database (your project has database/shop.db)
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+
+# MySQL dump / backup files
+*.sql.gz
+*.sql.bak
+*.dump
+
+# Keep schema.sql in Git (it's the structure, not sensitive data)
+!database/schema.sql
+
+
+# ─────────────────────────────────────────────
+#  3. UPLOADED FILES (uploads/)
+# ─────────────────────────────────────────────
+
+# Ignore all uploaded product/category images
+uploads/products/*
+uploads/categories/*
+uploads/*
+
+# But keep the folder structure alive in Git
+!uploads/.gitkeep
+!uploads/products/.gitkeep
+!uploads/categories/.gitkeep
+
+
+# ─────────────────────────────────────────────
+#  4. LOG FILES
+# ─────────────────────────────────────────────
+
+*.log
+*.log.*
+logs/
+log/
+php_errors.log
+error_log
+access_log
+
+# XAMPP specific logs
+C:/xampp/apache/logs/
+C:/xampp/mysql/data/*.log
+C:/xampp/php/logs/
+
+
+# ─────────────────────────────────────────────
+#  5. XAMPP / LOCAL SERVER TEMP FILES
+# ─────────────────────────────────────────────
+
+# XAMPP session and cache
+C:/xampp/tmp/
+C:/xampp/htdocs/.htaccess.bak
+
+# PHP session files
+/tmp/
+sess_*
+php_sess_*
+
+# PHP opcache
+*.cache
+
+
+# ─────────────────────────────────────────────
+#  6. COMPRESSED / BACKUP ARCHIVES
+# ─────────────────────────────────────────────
+
+# Your project already has admin.zip — exclude all zips
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+*.gz
+*.bz2
+
+
+# ─────────────────────────────────────────────
+#  7. OS-GENERATED FILES
+# ─────────────────────────────────────────────
+
+## Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+## macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon
+
+## Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+
+# ─────────────────────────────────────────────
+#  8. EDITOR & IDE FILES
+# ─────────────────────────────────────────────
+
+## VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+## JetBrains (PHPStorm, WebStorm)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+## Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+## Vim / Emacs
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
+
+
+# ─────────────────────────────────────────────
+#  9. NODE / FRONTEND TOOLING (if added later)
+# ─────────────────────────────────────────────
+
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+.parcel-cache/
+
+
+# ─────────────────────────────────────────────
+#  10. COMPOSER (if added later)
+# ─────────────────────────────────────────────
+
+/vendor/
+composer.lock
+
+
+# ─────────────────────────────────────────────
+#  11. MISC
+# ─────────────────────────────────────────────
+
+# Test / debug scripts
+test.php
+debug.php
+info.php
+phpinfo.php
+
+# Your reset/check utility files (optional — remove if you want to track them)
+# reset.php
+# check.php
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+*.old
+
+
+# ─────────────────────────────────────────────
+#  ALWAYS KEEP THESE (explicit negations)
+# ─────────────────────────────────────────────
+
+# Keep this file itself
+!.gitignore
+
+# Keep all .gitkeep placeholder files
+!**/.gitkeep
+
+# Keep the database schema
+!database/schema.sql
+
+# Keep all source PHP, CSS, JS, HTML files
+!**/*.php
+!**/*.css
+!**/*.js
+!**/*.html
+!**/*.htm
+!assets/**
