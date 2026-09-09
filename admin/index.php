@@ -5,19 +5,23 @@
 require_once __DIR__ . '/../includes/auth.php';
 
 if (isAdmin()) {
-    header('Location: /admin/dashboard.php');
+    header('Location: dashboard.php');
     exit;
 }
 
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
-    $pass  = trim($_POST['password'] ?? '');
+    $pass = trim($_POST['password'] ?? '');
     if (!$email || !$pass) {
-        $error = 'অনুগ্রহ করে ইমেইল ও পাসওয়ার্ড দিন।';
+        $error = 'অনুগ্রহ করে ইমেইল ও পাসওয়ার্ড দিন।';
     } elseif (adminLogin($email, $pass)) {
-        header('Location: /admin/dashboard.php');
+        header('Location: dashboard.php');
         exit;
+    } else {
+        $error = 'ইমেইল বা পাসওয়ার্ড ভুল।';
+    }
+}
     } else {
         $error = 'ইমেইল বা পাসওয়ার্ড ভুল।';
     }
